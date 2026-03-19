@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join Elite Rewards Hub to earn premium gift cards and rewards by sharing your opinion. Access exclusive surveys and app trials.">
+    <meta name="keywords" content="online rewards, gift cards, paid surveys, earn money online, work from home">
+    <title>Elite Rewards Hub | Earn Rewards for Your Opinion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* ENHANCED CSS STYLES */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            --accent-gold: #d4af37;
+            --accent-blue: #00d2ff;
+            --text-light: #f8f9fa;
+            --text-muted: #cbd5e0;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --button-hover: #e5c158;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            color: var(--text-light);
+            background: var(--primary-gradient);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 0;
+            background: rgba(15, 32, 39, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding-top: 80px; /* Offset for fixed header */
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--text-muted);
+        }
+
+        /* Buttons */
+        .button-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 25px;
+            background-color: var(--accent-gold);
+            color: #000;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Image Display */
+        .img-box {
+            width: 100%;
+            border-radius: 15px;
+            margin: 40px 0;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .img-box img {
+            width: 100%;
+            display: block;
+            transition: transform 5s ease;
+        }
+
+        .img-box:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Content Sections */
+        .content-block {
+            margin-bottom: 60px;
+        }
+
+        .content-block h2 {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .step-card, .benefit-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-gold);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .step-card:hover, .benefit-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .step-num {
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(212, 175, 55, 0.3);
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .testimonial {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 10px;
+            font-style: italic;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .testimonial-author {
+            margin-top: 20px;
+            font-weight: bold;
+            color: var(--accent-gold);
+            font-style: normal;
+        }
+
+        /* FAQ Accordion Style Improvement */
+        .faq-item {
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .faq-item h4 {
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: rgba(0,0,0,0.2);
+        }
+
+        /* Responsive Mobile Adjustments */
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            .hero { padding-top: 100px; }
+            .hero h1 { font-size: 2.2rem; }
+            .button-group { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* Hide nav links on mobile for simplicity, or add a hamburger menu */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Elite Rewards</a>
+            <nav class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Turn Your Spare Time Into Premium Rewards</h1>
+            <p>Join the world's most exclusive rewards network. Share your feedback, test emerging technologies, and receive gift cards from top global retailers.</p>
+            
+            <div class="button-group">
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">USA – Click Here</a>
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">UK – Click Here</a>
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">France – Click Here</a>
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">Other Regions – Click Here</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="content-block fade-in">
+                <h2>Understanding Digital Rewards</h2>
+                <p>In today's hyper-connected economy, your attention and feedback are the most valuable commodities. Online reward programs act as a bridge between major corporations and everyday consumers. Instead of spending millions on traditional advertising that might not reach the right audience, companies redirect those budgets toward users like you.</p>
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" alt="Data analysis and rewards">
+                </div>
+                <p>When you participate in these programs, you are performing micro-tasks that contribute to market research, user experience testing, and product development. Each survey you complete or app you trial provides data points that help shape the products of tomorrow. In exchange for this value, you are compensated with points, credits, or direct digital gift cards.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="content-block fade-in">
+                <h2>Why Brands Invest in Your Feedback</h2>
+                <p>You might wonder, "Why would a company pay me to play a game or answer questions?" The answer lies in the cost of failure. For a Fortune 500 company, launching a product that fails can cost hundreds of millions. By paying a small fraction of that to a global pool of testers, they can identify flaws and preferences early.</p>
+                <p>Market research is the backbone of the consumer industry. Companies need to know:
+                    <ul style="list-style: none; padding-left: 10px; margin-top: 15px;">
+                        <li>✅ Does this new app interface make sense to a user in the UK?</li>
+                        <li>✅ Is the pricing of this subscription service appealing to a college student in the USA?</li>
+                        <li>✅ Which logo design resonates more with shoppers in France?</li>
+                    </ul>
+                Your participation provides the "ground truth" that data algorithms alone cannot capture. This human element is why these programs remain robust and profitable for participants worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom: 50px;">Your Path to Earning Starts Here</h2>
+            <div class="grid-3">
+                <div class="step-card fade-in">
+                    <div class="step-num">01</div>
+                    <h3>Choose Your Country</h3>
+                    <p>Select your region from our verified list to ensure you receive tasks targeted to your local market.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-num">02</div>
+                    <h3>Access Tasks</h3>
+                    <p>Enter our secure portal where you'll find a curated list of surveys, app trials, and subscription offers.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-num">03</div>
+                    <h3>Complete Tasks</h3>
+                    <p>Follow the simple instructions for each task. Whether it's a 5-minute survey or testing a new mobile game.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-num">04</div>
+                    <h3>Earn Credits</h3>
+                    <p>Watch your account balance grow in real-time as your completed tasks are verified by our partners.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-num">05</div>
+                    <h3>Redeem Rewards</h3>
+                    <p>Exchange your balance for premium gift cards, PayPal cash, or exclusive retail vouchers instantly.</p>
+                </div>
+            </div>
+
+            <div class="button-group" style="margin-top: 80px;">
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">USA – Click Here</a>
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">UK – Click Here</a>
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">France – Click Here</a>
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">Other Regions – Click Here</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>The Benefits of Joining</h2>
+            <div class="img-box fade-in">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1000" alt="People working remotely">
+            </div>
+            <div class="grid-3">
+                <div class="benefit-card fade-in">
+                    <h3>Absolute Flexibility</h3>
+                    <p>Work from your couch, during your commute, or while waiting for a coffee. There are no fixed hours.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <h3>No Experience Needed</h3>
+                    <p>If you can use a smartphone or a laptop, you have all the skills required to start earning today.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <h3>Fast Payouts</h3>
+                    <p>We value your time. Our system is designed to process your rewards as quickly as the verification allows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="content-block fade-in">
+                <h2>Expert Tips for New Members</h2>
+                <p>Maximizing your earnings requires a bit of strategy. To get the most out of our rewards platform, consider these professional tips:</p>
+                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 10px; border-left: 4px solid var(--accent-blue);">
+                    <p><strong>1. Consistency is Key:</strong> Log in daily. The highest-paying surveys often have a limited number of slots and are filled quickly.</p>
+                    <p><strong>2. Be Honest:</strong> Algorithms detect inconsistent answers. Providing truthful feedback ensures you remain in good standing and receive more invitations.</p>
+                    <p><strong>3. Use a Dedicated Email:</strong> Keep your personal inbox clean by creating an email address specifically for your rewards and trials.</p>
+                    <p><strong>4. Complete Your Profile:</strong> The more we know about your interests, the more relevant (and higher paying) the tasks we can send your way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px;">What Our Members Are Saying</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial fade-in">
+                    "I started using this program during my lunch breaks. In just three months, I've earned enough gift cards to pay for all my holiday shopping!"
+                    <div class="testimonial-author">Sarah J. – United States</div>
+                </div>
+                <div class="testimonial fade-in">
+                    "The app trials are actually fun. I found two games I still play today, and I got paid to install them. Highly recommend for students."
+                    <div class="testimonial-author">Markus L. – United Kingdom</div>
+                </div>
+                <div class="testimonial fade-in">
+                    "Enfin une plateforme qui fonctionne en France. Les sondages sont intéressants et les paiements sont rapides."
+                    <div class="testimonial-author">Amélie D. – France</div>
+                </div>
+                <div class="testimonial fade-in">
+                    "Reliable and professional. It's not a 'get rich quick' scheme, but it's a very solid way to earn extra side income."
+                    <div class="testimonial-author">David K. – Canada</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <h2 style="text-align: center;">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item fade-in">
+                    <h4>Is it really free to join?</h4>
+                    <p>Yes, absolutely. We will never ask you for a membership fee. The companies are paying us to find participants like you.</p>
+                </div>
+                <div class="faq-item fade-in">
+                    <h4>How much can I realistically earn?</h4>
+                    <p>Earnings vary based on your location and the time you invest. Most active users earn between $50 and $200 per month in rewards.</p>
+                </div>
+                <div class="faq-item fade-in">
+                    <h4>Which gift cards are available?</h4>
+                    <p>We offer a wide variety including Amazon, Walmart, Starbucks, Google Play, and PayPal cash options.</p>
+                </div>
+                <div class="faq-item fade-in">
+                    <h4>Do the tasks expire?</h4>
+                    <p>Yes, most tasks have a "quota." Once enough people have completed them, they are removed from the dashboard.</p>
+                </div>
+                <div class="faq-item fade-in">
+                    <h4>How old do I need to be?</h4>
+                    <p>Generally, participants must be at least 18 years old, or 13 with parental consent, depending on your local laws.</p>
+                </div>
+                <div class="faq-item fade-in">
+                    <h4>Can I use a VPN?</h4>
+                    <p>No. Using a VPN is against our terms of service as it prevents us from providing accurate local data to our brand partners.</p>
+                </div>
+                <div class="faq-item fade-in">
+                    <h4>How long do surveys take?</h4>
+                    <p>Most surveys range from 5 to 20 minutes. The estimated time is always shown before you start.</p>
+                </div>
+                <div class="faq-item fade-in">
+                    <h4>When will I receive my reward?</h4>
+                    <p>Digital codes are usually delivered within 24-72 hours after you request a redemption.</p>
+                </div>
+                <div class="faq-item fade-in">
+                    <h4>Are my personal details safe?</h4>
+                    <p>We use industry-standard encryption to protect your data. We never sell your personal contact information to third parties.</p>
+                </div>
+                <div class="faq-item fade-in">
+                    <h4>What if a task doesn't credit?</h4>
+                    <p>Our support team can manually review completions if you provide a screenshot of the confirmation page.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: rgba(0,0,0,0.4); text-align: center;">
+        <div class="container">
+            <h2>Ready to Start Earning?</h2>
+            <p style="margin-bottom: 40px;">Choose your region below and access your first reward task in less than 60 seconds.</p>
+            <div class="img-box fade-in" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=800" alt="Success and rewards">
+            </div>
+            <div class="button-group">
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">USA – Click Here</a>
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">UK – Click Here</a>
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">France – Click Here</a>
+                <a href="https://www.mouseflyby.courses/?sl=6077778-98075&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_subID}" class="btn">Other Regions – Click Here</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Elite Rewards Hub. All rights reserved. <br>
+            All trademarks are the property of their respective owners. This site is not affiliated with Google, Facebook, or Amazon.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Automatic Year Update
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll Animation Trigger
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with the fade-in class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
